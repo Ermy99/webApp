@@ -47,18 +47,29 @@
  *
  * @param  {H.Map} map      A HERE Map instance within the application
  */
+      
 function addMarkersToMap(map) {
-  var parisMarker = new H.map.Marker({lat:48.8567, lng:2.3508});
-  map.addObject(parisMarker);
-  var romeMarker = new H.map.Marker({lat:41.9, lng: 12.5});
-  map.addObject(romeMarker);
-  var berlinMarker = new H.map.Marker({lat:52.5166, lng:13.3833});
-  map.addObject(berlinMarker);
-  var madridMarker = new H.map.Marker({lat:40.4, lng: -3.6833});
-  map.addObject(madridMarker);
-  var londonMarker = new H.map.Marker({lat:51.5008, lng:-0.1224});
-  map.addObject(londonMarker);
+
+	var tutor1 = {name: "Sarah", subject: "Math", latv: 30, longv: 30};
+	var tutor2 = {name: "Jane", subject: "Science", latv: 40, longv: 40};
+	var tutor3 = {name: "Joe", subject: "Math", latv: 50, longv: 50};
+
+	var tutors = [tutor1, tutor2, tutor3];
+
+	var i = 0;
+	for (i; i < tutors.length; i++) {
+		var tutor = tutors[i];
+		if (tutor.subject == "Math") {
+			var mylatvar = tutor.latv;
+			var mylongvar = tutor.longv;
+			var parisMarker = new H.map.Marker({lat: mylatvar, lng: mylongvar});
+ 			map.addObject(parisMarker);
+		}
+		
+	}
+  	
 }
+      
 /**
  * Boilerplate map initialization code starts below:
  */

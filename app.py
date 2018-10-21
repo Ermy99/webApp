@@ -3,6 +3,7 @@ from flask_sqlalchemy import SQLAlchemy
 from flask_heroku import Heroku
 from flask_sqlalchemy import SQLAlchemy
 import sys
+import os
 import json
 
 import logging
@@ -48,3 +49,9 @@ if __name__ == "__main__":
     app.run()
 
 
+<<<<<<< HEAD
+=======
+if __name__=="__main__":
+    aport = int(os.environ.get("PORT", 5000))
+    app.run(host='0.0.0.0', port=port)
+>>>>>>> 26d3c62cf43ad31be335eaf79b60b358442c0ddd

@@ -50,17 +50,11 @@
  *
  * @param  {H.Map} map      A HERE Map instance within the application
  */
+
+
 function addMarkersToMap(map) {
-  var parisMarker = new H.map.Marker({lat:48.8567, lng:2.3508});
+  var parisMarker = new H.map.Marker({lat:33.7749, lng:-84.3964});
   map.addObject(parisMarker);
-  // var romeMarker = new H.map.Marker({lat:41.9, lng: 12.5});
-  // map.addObject(romeMarker);
-  // var berlinMarker = new H.map.Marker({lat:52.5166, lng:13.3833});
-  // map.addObject(berlinMarker);
-  // var madridMarker = new H.map.Marker({lat:40.4, lng: -3.6833});
-  // map.addObject(madridMarker);
-  // var londonMarker = new H.map.Marker({lat:51.5008, lng:-0.1224});
-  // map.addObject(londonMarker);
 }
 /**
  * Boilerplate map initialization code starts below:
@@ -79,8 +73,8 @@ var defaultLayers = platform.createDefaultLayers({
 //Step 2: initialize a map - this map is centered over Europe
 var map = new H.Map(document.getElementById('map'),
   defaultLayers.normal.map,{
-  center: {lat:50, lng:5},
-  zoom: 4,
+  center: {lat:33.7756, lng:-84.3963},
+  zoom: 15.2,
   pixelRatio: pixelRatio
 });
 //Step 3: make the map interactive

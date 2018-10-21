@@ -21,10 +21,12 @@
         <tbody>
           <center><form>
             <h2>Choose your subject</h2>
-              <select class="design">
-                <option value="math"> Math</option>
-                <option value="math"> Science</option>
+              <select id= "tutorclass"  onchange= "addMarkersToMap(map)" class="design" >
+                <option></option>
+                <option value="Science"> Science</option>
+                <option value="Math">Math</option>
               </select>
+              <input type="submit" id = "submitbutton" value="Clear" onclick="map.removeObjects()">
           </form></center>
           <br>
     </div>
@@ -48,29 +50,32 @@
  *
  * @param  {H.Map} map      A HERE Map instance within the application
  */
-      
+
+
+
 function addMarkersToMap(map) {
 
-	var tutor1 = {name: "Sarah", subject: "Math", latv: 30, longv: 30};
+  var tutor1 = {name: "Sarah", subject: "Math", latv: 30, longv: 30};
 	var tutor2 = {name: "Jane", subject: "Science", latv: 40, longv: 40};
 	var tutor3 = {name: "Joe", subject: "Math", latv: 50, longv: 50};
 
 	var tutors = [tutor1, tutor2, tutor3];
+  
+  	for (var i = 0; i < tutors.length; i++) {
+  		var tutor = tutors[i];
+      var subjectToTutor = document.getElementById("tutorclass");
+      var mylatvar = tutor.latv;
+      var mylongvar = tutor.longv;
+      var parisMarker = new H.map.Marker({lat: mylatvar, lng: mylongvar});
 
-	var i = 0;
-	for (i; i < tutors.length; i++) {
-		var tutor = tutors[i];
-		if (tutor.subject == "Math") {
-			var mylatvar = tutor.latv;
-			var mylongvar = tutor.longv;
-			var parisMarker = new H.map.Marker({lat: mylatvar, lng: mylongvar});
- 			map.addObject(parisMarker);
-		}
-		
-	}
-  	
+      if (subjectToTutor.value == tutor.subject) {
+        map.addObject(parisMarker);
+      }
+  	}
 }
-      
+
+
+  
 /**
  * Boilerplate map initialization code starts below:
  */
@@ -88,8 +93,8 @@ var defaultLayers = platform.createDefaultLayers({
 //Step 2: initialize a map - this map is centered over Europe
 var map = new H.Map(document.getElementById('map'),
   defaultLayers.normal.map,{
-  center: {lat:50, lng:5},
-  zoom: 4,
+  center: {lat:33.7756, lng:-84.3963},
+  zoom: 16,
   pixelRatio: pixelRatio
 });
 //Step 3: make the map interactive

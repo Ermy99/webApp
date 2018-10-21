@@ -16,4 +16,5 @@ def main():
     return render_template("IndexPage.html")
 
 if __name__=="__main__":
-    app.run()
+    aport = int(os.environ.get("PORT", 5000))
+    app.run(host='0.0.0.0', port=port)

@@ -1,26 +1,23 @@
 <html >
-    <head>
-        <title> Login </title>
-        
-        <link rel="stylesheet" type="text/css" href="style.css" />
-    
-    </head>
-    <body style = "margin:0">
-         <div class = "grid" id = "container"> 
-        <h1 id = header> Login </h1>
-            
-            <form action= "/login.html" method="post">
-                <label for="username"> Username: </label>
-                <input type = "text" id="Username"/>
-                <br/>
-                <label for="password">Password: </label>
-                <br/>
-                <input type="password" name="password" id="password">
-                <br/><br/>
-                <button type="submit">Submit</button>
-            </form>
-    
-         </div>
-    </body>
-    
-    
+<head>
+    <title>Log In</title>
+	
+    <link rel="stylesheet" type="text/css" href="loginstyle.css" />
+
+</head>
+<body style = "margin:0">
+    <h1>Log In</h1>
+
+     <div class = "loginbox"> 
+        <form>
+            <p>Username</p>
+            <input type = "text" name = "" placeholder = "Enter Username" id="Username"/>
+            <br/>
+            <p>Password</p>
+            <input type="Password" name="" placeholder="Enter Password">
+            <input type="submit" id = "loginbutton" value="Log In" style = "clear: left">
+        </form>
+    </div>
+
+</body>
+
